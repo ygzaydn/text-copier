@@ -33,7 +33,7 @@ export default function Home() {
                 <button
                     onClick={() =>
                         navigator.clipboard.writeText(
-                            text.replaceAll(" \n", " ")
+                            text.replaceAll(" \n", "\n").replaceAll("\n", " ")
                         )
                     }
                     className="bg-blue-500 px-4 py-2 rounded-sm ml-auto"
