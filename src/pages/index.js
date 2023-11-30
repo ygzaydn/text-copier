@@ -27,13 +27,13 @@ export default function Home() {
                 </h1>
                 <textarea
                     className={`w-full bg-slate-50 h-64 text-blue-500 p-2`}
-                    value={text.replaceAll("\n", " ")}
+                    value={text.replaceAll(" \n", "\n").replaceAll("\n", " ")}
                     readOnly
                 />
                 <button
                     onClick={() =>
                         navigator.clipboard.writeText(
-                            text.replaceAll("\n", " ")
+                            text.replaceAll(" \n", " ")
                         )
                     }
                     className="bg-blue-500 px-4 py-2 rounded-sm ml-auto"
