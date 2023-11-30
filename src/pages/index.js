@@ -39,7 +39,7 @@ export default function Home() {
                             alert("Metin Kopyalandı");
                         }
                     }}
-                    className="bg-blue-500 px-4 py-2 rounded-sm ml-auto disabled:bg-gray-500 transition-all cursor-pointer disabled:cursor-default"
+                    className="bg-blue-500 px-4 py-2 rounded-sm ml-auto disabled:bg-gray-500 transition-all cursor-pointer disabled:cursor-default text-slate-50"
                 >
                     Metni Kopyala
                 </button>
