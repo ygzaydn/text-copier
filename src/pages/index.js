@@ -6,12 +6,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
     const [text, setText] = useState("");
-    console.log(text.split(""));
     return (
         <main
-            className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+            className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className} bg-black`}
         >
-            <div className="w-full">
+            <div className="w-full my-4">
                 <h1 className="text-blue-300 text-2xl mb-6">
                     Metni Yapıştırın
                 </h1>
@@ -21,7 +20,7 @@ export default function Home() {
                 />
             </div>
 
-            <div className="w-full flex flex-col">
+            <div className="w-full flex flex-col my-4">
                 <h1 className="text-blue-300 text-2xl mb-6">
                     Düzeltilmiş Metin
                 </h1>
@@ -31,12 +30,16 @@ export default function Home() {
                     readOnly
                 />
                 <button
-                    onClick={() =>
+                    disabled={text.length < 1}
+                    onClick={() => {
                         navigator.clipboard.writeText(
                             text.replaceAll(" \n", "\n").replaceAll("\n", " ")
-                        )
-                    }
-                    className="bg-blue-500 px-4 py-2 rounded-sm ml-auto"
+                        );
+                        if (text.length > 0) {
+                            alert("Metin Kopyalandı");
+                        }
+                    }}
+                    className="bg-blue-500 px-4 py-2 rounded-sm ml-auto disabled:bg-gray-500 transition-all cursor-pointer disabled:cursor-default"
                 >
                     Metni Kopyala
                 </button>
