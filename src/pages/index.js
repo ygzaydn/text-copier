@@ -1,26 +1,12 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useState } from "react";
-import { translate } from "@vitalets/google-translate-api";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
     const [text, setText] = useState("");
     const [translated, setTranslated] = useState("");
-
-    const translateToTr = async (textToTranslate) => {
-        try {
-            const { text } = await translate(textToTranslate, {
-                to: "tr",
-            });
-            console.log(resp);
-        } catch (err) {
-            console.log(err);
-            setTranslated("");
-            alert("Çeviri Sırasında Hata Oluştu");
-        }
-    };
 
     return (
         <main
@@ -62,19 +48,6 @@ export default function Home() {
                     >
                         Metni Kopyala
                     </button>
-                    {/*   <button
-                        disabled={text.length < 1}
-                        onClick={() =>
-                            translateToTr(
-                                text
-                                    .replaceAll(" \n", "\n")
-                                    .replaceAll("\n", " ")
-                            )
-                        }
-                        className="bg-green-500 px-4 py-2 rounded-sm mx-auto disabled:bg-gray-500 transition-all cursor-pointer disabled:cursor-default text-slate-50"
-                    >
-                        Metni Türkçeye Çevir
-                    </button> */}
                 </div>
             </div>
             {translated !== "" && (
