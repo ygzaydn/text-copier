@@ -62,7 +62,7 @@ export default function Home() {
                     >
                         Metni Kopyala
                     </button>
-                    <button
+                    {/*   <button
                         disabled={text.length < 1}
                         onClick={() =>
                             translateToTr(
@@ -74,7 +74,7 @@ export default function Home() {
                         className="bg-green-500 px-4 py-2 rounded-sm mx-auto disabled:bg-gray-500 transition-all cursor-pointer disabled:cursor-default text-slate-50"
                     >
                         Metni Türkçeye Çevir
-                    </button>
+                    </button> */}
                 </div>
             </div>
             {translated !== "" && (
